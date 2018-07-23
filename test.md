@@ -9,10 +9,12 @@ vagrant up
 ```
 
 
-**New task**
+**Picture**
 
-And this is not:
-```bash
-echo 'Hello'
-cat /etc/var/messages
-```
+Inline-style: 
+![This is Inline style](https://github.com/propalparolnapervom/OVERALL/Pictures/test.PNG "Just example of Inline style")
+
+Reference-style: 
+![This is Reference style][xburser_logo]
+
+[xburser_logo]: https://github.com/propalparolnapervom/OVERALL/Pictures/test.PNG "Same, but Reference style"
