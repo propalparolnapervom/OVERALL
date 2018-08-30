@@ -18,7 +18,8 @@ CloudWatch | Dashboards
 
 ## BUTTONS
 
-[button:Button link](http://amazon.com)   [button:primary:Primary button link](http://amazon.com)
+[button:Button link](http://amazon.com)
+[button:primary:Primary button link](http://amazon.com)
 
 
 
