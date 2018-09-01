@@ -13,7 +13,7 @@ ___________________________
 
 New AWS EC2 instance just launched (from home) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
 
-Security Groups allows Inbound/Outbound for TCP:22.
+Security Groups allow Inbound/Outbound connections for TCP:22.
 
 Non of the [Troubleshooting Cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html) was confirmed (missing route table, etc)
 
