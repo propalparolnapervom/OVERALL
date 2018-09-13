@@ -9,6 +9,27 @@
 ___________________________
 
 
+
+
+**When**
+
+Making Domain->S3 mapping in AWS Route53 service.
+
+**What**
+
+I’m creating an Amazon Route 53 [alias resource record set](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html) in the Route 53 console, but I can't select my preferred resource from the Alias Target list.
+
+**So**
+
+1. Make sure S3 bucket name (`xburser.com`) absolutely the same as your registered domain (`xburser.com`). 
+
+2. Make sure S3 bucket name (`xburser.com`) is Static-Webpage bucket.
+
+Find more options in official debug steps [here](https://aws.amazon.com/premiumsupport/knowledge-center/route-53-no-targets/)
+
+
+___________________________
+
 **When**
 
 New AWS EC2 instance just launched (from home) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
