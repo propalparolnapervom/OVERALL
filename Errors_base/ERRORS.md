@@ -13,7 +13,30 @@ ___________________________
 
 **When**
 
-Making Domain->S3 mapping in AWS Route53 service.
+AWS: Downloading of `connect.php` file from S3 to EC2 instance via `wget` util.
+
+**What**
+
+```
+wget https://s3.eu-central-1.amazonaws.com/xburser.com/connect.php
+
+      --2018-09-19 15:51:44--  https://s3.eu-central-1.amazonaws.com/xburser.com/connect.php
+      Resolving s3.eu-central-1.amazonaws.com (s3.eu-central-1.amazonaws.com)... 52.219.74.24
+      Connecting to s3.eu-central-1.amazonaws.com (s3.eu-central-1.amazonaws.com)|52.219.74.24|:443... connected.
+      HTTP request sent, awaiting response... 403 Forbidden
+      2018-09-19 15:51:44 ERROR 403: Forbidden.
+```
+
+**So**
+
+`connect.php` file on S3 was private. Making it public helps.
+
+___________________________
+
+
+**When**
+
+AWS: Making Domain->S3 mapping in AWS Route53 service.
 
 **What**
 
@@ -32,7 +55,7 @@ ___________________________
 
 **When**
 
-New AWS EC2 instance just launched (from home) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
+AWS: New AWS EC2 instance just launched (from home location) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
 
 Security Groups allow Inbound/Outbound connections for TCP:22.
 
