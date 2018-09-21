@@ -10,10 +10,39 @@ ___________________________
 
 
 
+**When**
+
+Oracle DB
+
+Connecting to Oracle instance via `sqlplus` from your Windows Laptop.
+
+**What**
+
+```
+sqlplus xbsadmin/xbsadmin@xbsdb;
+
+      SQL*Plus: Release 12.2.0.1.0 Production on Fri Sep 21 13:06:36 2018
+      Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+      ERROR:
+      ORA-12154: TNS:could not resolve the connect identifier specified
+```
+
+**So**
+
+Don't use `;`, it appears as part of TNS. Try this instead:
+```
+sqlplus xbsadmin/xbsadmin@xbsdb
+```
+
+___________________________
+
+
 
 **When**
 
-AWS: Downloading of `connect.php` file from S3 to EC2 instance via `wget` util.
+AWS
+
+Downloading of `connect.php` file from S3 to EC2 instance via `wget` util.
 
 **What**
 
@@ -36,7 +65,9 @@ ___________________________
 
 **When**
 
-AWS: Making Domain->S3 mapping in AWS Route53 service.
+AWS
+
+Making Domain->S3 mapping in AWS Route53 service.
 
 **What**
 
@@ -55,7 +86,9 @@ ___________________________
 
 **When**
 
-AWS: New AWS EC2 instance just launched (from home location) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
+AWS
+
+New AWS EC2 instance just launched (from home location) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
 
 Security Groups allow Inbound/Outbound connections for TCP:22.
 
