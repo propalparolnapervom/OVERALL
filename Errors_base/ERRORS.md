@@ -9,6 +9,51 @@
 ___________________________
 
 
+**When**
+
+AWS
+
+Trying to switch role for IAM user via assume-role in the terminal.
+
+**What**
+
+```
+assume-role mine todel_role_sts 619351
+
+      Parameter validation failed:
+      Invalid length for parameter SerialNumber, value: 4, valid range: 9-inf
+```
+
+**So**
+
+
+
+___________________________
+
+
+
+**When**
+
+AWS
+
+Trying to switch role for IAM user via assume-role in the terminal.
+
+**What**
+
+```
+assume-role mine todel_role_sts 619351
+
+      An error occurred (AccessDenied) when calling the GetUser operation: User: arn:aws:iam::891692259462:user/tester is not authorized to perform: iam:GetUser on resource: user tester
+```
+
+**So**
+
+In the IAM root account 891692259462 (where user `tester` is) Role `IAMReadOnlyAccess` has been added for the user `tester`. 
+
+___________________________
+
+
+
 
 **When**
 
