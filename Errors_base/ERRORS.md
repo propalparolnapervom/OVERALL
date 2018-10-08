@@ -8,6 +8,30 @@
 
 ___________________________
 
+**When**
+
+TunnelBlick (soft to connect to VPN).
+
+Making first configuration.
+
+
+**What**
+
+Trying to make first VPN configuration after just installed TunnelBlick.
+
+```
+Warning
+
+Tunnelblick could not fetch IP address information before the connection to sergii_test was made.
+```
+
+
+**So**
+
+
+
+___________________________
+
 
 **When**
 
@@ -26,7 +50,7 @@ assume-role mine todel_role_sts 619351
 
 **So**
 
-
+???
 
 ___________________________
 
