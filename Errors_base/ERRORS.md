@@ -28,6 +28,16 @@ Tunnelblick could not fetch IP address information before the connection to serg
 
 **So**
 
+It might be that during installation of the TunnelBlick option **Check if the apparent public IP address changed after connecting** has been selected.
+
+
+Click on TunnelBlick.
+
+Click **VPN Details...**.
+
+Highlight your configuration (in this case it's `sergii_test`).
+
+Make sure that following checkbox is not selected: **Check if the apparent public IP address changed after connecting**. 
 
 
 ___________________________
