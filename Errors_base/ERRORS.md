@@ -9,37 +9,99 @@
 ___________________________
 
 
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+Kubernetes
+
+Running `kubectl ...` first time after installing.
+
+**What**
+
+```
+kubectl get pods
+
+	Error from server (NotAcceptable): unknown (get pods)
+	Sergiis-MacBook-Pro:~ sbur$ kubectl version
+	Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.0", GitCommit:"0ed33881dc4355495f623c6f22e7dd0b7632b7c0", GitTreeState:"clean", BuildDate:"2018-09-28T15:20:58Z", GoVersion:"go1.11", Compiler:"gc", Platform:"darwin/amd64"}
+	Server Version: version.Info{Major:"1", Minor:"8", GitVersio\
+	n:"v1.8.7", GitCommit:"b30876a5539f09684ff9fde266fda10b37738c9c", GitTreeState:"clean", BuildDate:"2018-01-16T21:52:38Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+
+**So**
+
+After installation of latest `kubectl` version the Client version was much newer then Server ones. 
+
+```
+kubectl version
+Client Version: version.Info{Major:"1", Minor:"9", GitVersion:"v1.12.1", GitCommit:"57729ea3d9a1b75f3fc7bbbadc597ba707d47c8a", GitTreeState:"clean", BuildDate:"2018-06-29T01:14:35Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"darwin/amd64"}
+Server Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.7", GitCommit:"b30876a5539f09684ff9fde266fda10b37738c9c", GitTreeState:"clean", BuildDate:"2018-01-16T21:52:38Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+Install any older version
+```
+cd ~
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.9/bin/darwin/amd64/kubectl
+chmod +x kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
+
+
+___________________________
+
+
 **When**
 
 AWS
 
-Configuring [assume-role](https://github.com/remind101/assume-role) first time.
-
-Running
-```
-assume-role development
-```
+Running `assume-role development` first time after initial configuration of [assume-role](https://github.com/remind101/assume-role).
 
 
 **What**
 
 ```
-panic: SharedConfigAssumeRoleError: failed to load assume role for arn:aws:iam::570255904933:role/90poe_role_admin, source profile has no shared credentials
+assume-role ...
 
-goroutine 1 [running]:
-github.com/remind101/assume-role/vendor/github.com/aws/aws-sdk-go/aws/session.Must(...)
-	/Users/sbur/go/src/github.com/remind101/assume-role/vendor/github.com/aws/aws-sdk-go/aws/session/session.go:265
-main.assumeProfile(0x7ffeefbffc3c, 0xb, 0x0, 0x0, 0x13fe6e0)
-	/Users/sbur/go/src/github.com/remind101/assume-role/main.go:171 +0x25e
-main.main()
-	/Users/sbur/go/src/github.com/remind101/assume-role/main.go:91 +0x397
+	panic: SharedConfigAssumeRoleError: failed to load assume role for arn:aws:iam::570255904933:role/90poe_role_admin, source profile has no shared credentials
+
+	goroutine 1 [running]:
+	github.com/remind101/assume-role/vendor/github.com/aws/aws-sdk-go/aws/session.Must(...)
+		/Users/sbur/go/src/github.com/remind101/assume-role/vendor/github.com/aws/aws-sdk-go/aws/session/session.go:265
+	main.assumeProfile(0x7ffeefbffc3c, 0xb, 0x0, 0x0, 0x13fe6e0)
+		/Users/sbur/go/src/github.com/remind101/assume-role/main.go:171 +0x25e
+	main.main()
+		/Users/sbur/go/src/github.com/remind101/assume-role/main.go:91 +0x397
 ```      
+      
       
 **So**
 
 Update `~/.aws` to have `[iam]` head instead of `[default]`.
 
 ___________________________
+
 
 **When**
 
