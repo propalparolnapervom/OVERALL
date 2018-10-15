@@ -8,6 +8,39 @@
 
 ___________________________
 
+
+**When**
+
+AWS
+
+Configuring [assume-role](https://github.com/remind101/assume-role) first time.
+
+Running
+```
+assume-role development
+```
+
+
+**What**
+
+```
+panic: SharedConfigAssumeRoleError: failed to load assume role for arn:aws:iam::570255904933:role/90poe_role_admin, source profile has no shared credentials
+
+goroutine 1 [running]:
+github.com/remind101/assume-role/vendor/github.com/aws/aws-sdk-go/aws/session.Must(...)
+	/Users/sbur/go/src/github.com/remind101/assume-role/vendor/github.com/aws/aws-sdk-go/aws/session/session.go:265
+main.assumeProfile(0x7ffeefbffc3c, 0xb, 0x0, 0x0, 0x13fe6e0)
+	/Users/sbur/go/src/github.com/remind101/assume-role/main.go:171 +0x25e
+main.main()
+	/Users/sbur/go/src/github.com/remind101/assume-role/main.go:91 +0x397
+```      
+      
+**So**
+
+Update `~/.aws` to have `[iam]` head instead of `[default]`.
+
+___________________________
+
 **When**
 
 TunnelBlick (soft to connect to VPN).
