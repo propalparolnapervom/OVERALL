@@ -28,6 +28,94 @@ ___________________________
 
 ___________________________
 
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+Docker
+
+After successful login to Docker Hub `docker.io` ...
+```
+docker login -u xbu -p xbu docker.io
+
+	WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+	Login Succeeded
+```
+
+... I was trying to push there `golang` Docker Image
+```
+docker images
+
+	REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+	golang                   latest              45e48f60e268        2 days ago          777MB
+```
+
+**What**
+
+```
+docker push golang
+
+	The push refers to repository [docker.io/library/golang]
+	7a7147543a13: Layer already exists 
+	757fc57926be: Layer already exists 
+	52da4d4dcf59: Layer already exists 
+	1191b3f5862a: Layer already exists 
+	08a01612ffca: Layer already exists 
+	8bb25f9cdc41: Layer already exists 
+	f715ed19c28b: Layer already exists 
+	errors:
+	denied: requested access to the resource is denied
+	unauthorized: authentication required
+```
+
+**So**
+
+For Docker Image to be pushed to the docker images repo (Docker Hub, for example) a namespace (corresponds to Docker Hub user) has to be specified additionally. 
+
+In this case: `xbu/golang` has to be pushed instead of `golang`.
+
+
+So add a tag to already existing Docker Image
+```
+docker tag golang xbu/golang
+```
+
+Check it
+```
+docker images
+
+	REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+	golang                   latest              45e48f60e268        2 days ago          777MB
+	xburser2/golang          latest              45e48f60e268        2 days ago          777MB
+```
+
+Now push it
+```
+docker push xbu/golang
+```
+
+
+
+___________________________
+
 
 
 **When**
