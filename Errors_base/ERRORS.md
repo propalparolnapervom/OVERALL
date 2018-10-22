@@ -40,9 +40,32 @@ ___________________________
 
 **When**
 
+VirtualBox
+
+Installing VirtualBox on MacOS.
+
 **What**
 
+Error is occuring during install process:
+
+
+The installation failed.
+
+The installer encountered an error that caused the installation to fail. Contact the software manufacturer for assistance.
+
+
 **So**
+
+Option #1 from this [link](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5):
+
+1) Open up System Preferences
+2) Click on theSecurity & Privacy icon
+3) Hopefully you’ll see a message saying `System software from developer “Oracle America, Inc.” was blocked from loading`.
+4) If you do see the message, click the lock icon in the bottom left of the window
+5) Enter your Mac password
+6) Then click the Allow button
+
+
 
 ___________________________
 
