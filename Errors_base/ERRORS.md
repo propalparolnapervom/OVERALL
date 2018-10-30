@@ -36,6 +36,122 @@ ___________________________
 
 ___________________________
 
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+**When**
+
+Helm
+
+
+Key `--install` of `helm upgrade` has to install Helm chart if not installed.
+
+Helm release with specific name `<email>` is absent in current releases:
+```
+helm --tls ls email
+```
+
+
+
+**What**
+
+But the key is not working:
+```
+helm upgrade --install email-autodiscover . --tls --namespace default --debug --values values.yaml
+
+	...
+	Error: UPGRADE FAILED: "email-autodiscover" has no deployed releases
+	make: *** [Makefile:14: install] Error 1
+```
+
+
+**So**
+
+Helm release with specific name `<email>` is absent in current releases, BUT still present in the list of deleted:
+```
+helm ls -a --tls email
+
+	NAME              	REVISION	UPDATED                 	STATUS 	CHART                   	APP VERSION	NAMESPACE
+	email-autodiscover	1       	Tue Oct 30 16:58:49 2018	DELETED	email-0.0.1	           	default
+```
+
+That's because previous Helm release was deleted as
+```
+helm delete <email>
+```
+
+It allows to keep information about release for rollback.
+
+So,
+
+remove release fully prior to run it's installation:
+```
+helm delete --purge <email>
+```
+
+___________________________
+
 
 
 **When**
