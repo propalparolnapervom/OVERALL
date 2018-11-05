@@ -102,7 +102,13 @@ Installation of Docker on the new CentOS server.
 **What**
 
 ```
-Requires: container-selinux >= 2.9
+sudo yum install docker-ce
+
+	...
+	Error: Package: 3:docker-ce-18.09.0-2.1.rc1.el7.x86_64 (docker-ce-test)
+		   Requires: container-selinux >= 2.9
+	 You could try using --skip-broken to work around the problem
+	 You could try running: rpm -Va --nofiles --nodigest
 ```
 
 **So**
