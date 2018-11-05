@@ -94,9 +94,23 @@ ___________________________
 
 **When**
 
+Docker 
+
+Installation of Docker on the new CentOS server.
+
+
 **What**
 
+```
+Requires: container-selinux >= 2.9
+```
+
 **So**
+
+As mentioned [here](https://github.com/docker/for-linux/issues/299), following should be run prior to run `sudo yum install docker-ce -y`: 
+```
+sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.42-1.gitad8f0f7.el7.noarch.rpm
+```
 
 ___________________________
 
