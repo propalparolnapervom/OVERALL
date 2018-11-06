@@ -84,10 +84,22 @@ ___________________________
 
 **When**
 
+Helm + Concourse
+
+There's a Helm-chart `oo` with service `audit` which is started by Concourse deploy pipline.
+
 **What**
+
+There's such service in Helm-chart `oo`, but pipeline run wasn't successful with following error
+```
+Error: UPGRADE FAILED: no Service with the name "audit" found
+```
 
 **So**
 
+Helm-chart `oo` has been deployed manually.
+
+Next pipeline run was successful.
 ___________________________
 
 
