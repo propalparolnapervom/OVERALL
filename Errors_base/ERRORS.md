@@ -78,12 +78,16 @@ failed to stream out from volume
 
 **So**
 
+1. Helped me:
+
 Re-create a pipeline.
 
 Start with it's removing:
 ```
 fly -t tutorial dp -p to_del
 ```
+
+2. In general: the problem is [volume-related](https://github.com/concourse/concourse/issues/2314#issuecomment-401015733).
 
 ___________________________
 
