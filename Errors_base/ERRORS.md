@@ -66,9 +66,24 @@ ___________________________
 
 **When**
 
+Concourse
+
+Playing with different image sources for nginx in the Concourse pipeline.
+
 **What**
 
+```
+failed to stream out from volume
+```
+
 **So**
+
+Re-create a pipeline.
+
+Start with it's removing:
+```
+fly -t tutorial dp -p to_del
+```
 
 ___________________________
 
