@@ -58,10 +58,25 @@ ___________________________
 
 **When**
 
+Concourse
+
+Creating new pipeline.
+
 **What**
+
+```
+error: yaml: unmarshal errors:
+  line 34: field params not found in type atc.JobConfig
+  line 39: field put not found in type atc.JobConfig
+```
 
 **So**
 
+Specified lines were fine (this wasn't first draft of `pipeline.yml` file, they were in the part that wasn't changed and worked fine previously).
+
+Next block of lines (`put` step) wasn't placed correctly: it was too left.
+
+Fixed by placing this block a little bit to the right.
 ___________________________
 
 **When**
