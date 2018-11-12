@@ -209,6 +209,13 @@ echo ${VAR_ARRAY[3]}
 
 **So**
 
+Take a look at your `sh`:
+```
+ls -la /bin/sh
+
+                 lrwxrwxrwx    1 root     root            12 Sep 11 20:23 /bin/sh -> /bin/busybox
+```
+
 Both `busybox`'s `sh` (which is `ash`) and `dash` do not support arrays.
 
 Array might be rewriten with any following way, for example:
