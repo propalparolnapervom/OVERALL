@@ -169,10 +169,104 @@ ___________________________
 
 **When**
 
+Shell
+
+Script `array.sh` works with the `bash`:
+```
+#!/bin/bash
+
+VAR_ARRAY=(
+  "ZERO"
+  "ONE"
+  "TWO"
+  "THREE"
+)
+
+echo ${VAR_ARRAY[1]}
+echo ${VAR_ARRAY[3]}
+```
+
+It doesn't work with `sh`:
+```
+#!/bin/sh
+
+VAR_ARRAY=(
+  "ZERO"
+  "ONE"
+  "TWO"
+  "THREE"
+)
+
+echo ${VAR_ARRAY[1]}
+echo ${VAR_ARRAY[3]}
+```
+
 **What**
+
+```
+/array.sh: line 3: syntax error: unexpected "("
+```
 
 **So**
 
+Both `busybox`'s `sh` (which is `ash`) and `dash` do not support arrays.
+
+Array might be rewriten with any following way, for example:
+
+1.
+```
+var="ZERO|ONE|TWO|THREE"
+oldIFS=$IFS
+IFS="|"
+set -- $var
+echo "${0}"
+echo "${1}"
+echo "${2}"
+echo "${3}"
+echo "${4}"
+IFS=$oldIFS
+```
+
+2.
+```
+#!/bin/sh
+
+var="0 1 2 3 4 5 6 7 8 9 10 11 12"
+
+set -- $var
+
+echo "${1}"
+echo "${5}"
+echo "${12}"
+```
+
+3.
+```
+#!/bin/sh
+
+
+var="\
+0 \
+1 \
+2 \
+3 \
+4 \
+5 \
+6 \
+7 \
+8 \
+9 \
+10 \
+11 \
+12\
+"
+
+set -- $var
+
+echo "${1}"
+echo "${5}"
+echo "${12}"
+```
 ___________________________
 
 **When**
