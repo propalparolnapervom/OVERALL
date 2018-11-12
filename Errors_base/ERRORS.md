@@ -177,9 +177,50 @@ ___________________________
 
 **When**
 
+Docker
+
+Build simplest Docker image with following `test.sh` within:
+```
+#!/bin/bash
+
+echo
+echo
+echo "  A TEST MESSAGE FROM THE CONTAINER"
+echo
+echo
+```
+
+Appropriate Dockerfile:
+```
+FROM nginx:1.15-alpine
+
+COPY ./test.sh /test.sh
+
+CMD ["/test.sh"]
+```
+
+
 **What**
 
+Docker build is successful, but when you try to run container:
+```
+standard_init_linux.go:190: exec user process caused "no such file or directory"
+```
+
 **So**
+
+Apperently, `/bin/bash` is absent in `nginx:1.15-alpine`.
+
+At least this update of `test.sh` helps:
+```
+#!/bin/sh
+
+echo
+echo
+echo "  A TEST MESSAGE FROM THE CONTAINER"
+echo
+echo
+```
 
 ___________________________
 
