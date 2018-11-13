@@ -161,9 +161,25 @@ ___________________________
 
 **When**
 
+Helm
+
+Deploying via helm chart.
+
 **What**
 
+```
+make install env=development valfile=de.yaml
+
+	...
+	[debug] Fetched stable/prometheus to /Users/oleksandrhrab/work/helm/dev_certs/cache/archive/prometheus-7.1.0.tgz
+
+	Error: UPGRADE FAILED: the server could not find the requested resource
+	make: *** [install] Error
+```
+
 **So**
+
+Parameter `--wait` was removed to fix this problem.
 
 ___________________________
 
