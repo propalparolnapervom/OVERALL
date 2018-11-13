@@ -162,7 +162,7 @@ ___________________________
 
 **When**
 
-<Helm>
+<<Helm>>
 
 Deploying via helm chart.
 
