@@ -186,7 +186,7 @@ ___________________________
 
 **When**
 
-Shell
+#Shell#
 
 Script `array.sh` works with the `bash`:
 ```
@@ -295,7 +295,7 @@ ___________________________
 
 **When**
 
-Docker
+#Docker#
 
 Build simplest Docker image with following `test.sh` within:
 ```
@@ -346,7 +346,7 @@ ___________________________
 
 **When**
 
-Docker
+#Docker#
 
 Build simplest Docker image with following `test.sh` within:
 ```
@@ -385,7 +385,7 @@ ___________________________
 
 **When**
 
-Concourse
+#Concourse#
 
 Creating new pipeline.
 
@@ -408,7 +408,7 @@ ___________________________
 
 **When**
 
-Concourse
+#Concourse#
 
 Playing with different image sources for nginx in the Concourse pipeline.
 
@@ -435,7 +435,7 @@ ___________________________
 
 **When**
 
-Git
+#Git#
 
 `git clone ...` after upgrading MacOS to Mojave.
 
@@ -459,7 +459,7 @@ ___________________________
 
 **When**
 
-Helm + Concourse
+#Helm# + #Concourse#
 
 There's a Helm-chart `oo` with service `audit` which is started by Concourse deploy pipline.
 
@@ -481,7 +481,7 @@ ___________________________
 
 **When**
 
-Docker 
+#Docker#
 
 Installation of Docker on the new CentOS server.
 
@@ -509,7 +509,7 @@ ___________________________
 
 **When**
 
-Helm
+#Helm#
 
 
 Key `--install` of `helm upgrade` has to install Helm chart if not installed.
@@ -563,7 +563,7 @@ ___________________________
 
 **When**
 
-VirtualBox
+#VirtualBox#
 
 Installing VirtualBox on MacOS.
 
@@ -596,7 +596,7 @@ ___________________________
 
 **When**
 
-Docker
+#Docker#
 
 After successful login to Docker Hub `docker.io` ...
 ```
@@ -666,7 +666,7 @@ ___________________________
 
 **When**
 
-Kubernetes
+#Kubernetes#
 
 Running `kubectl ...` first time after installing.
 
@@ -708,7 +708,7 @@ ___________________________
 
 **When**
 
-AWS
+#AWS#
 
 Running `assume-role development` first time after initial configuration of [assume-role](https://github.com/remind101/assume-role).
 
@@ -739,7 +739,7 @@ ___________________________
 
 **When**
 
-TunnelBlick (soft to connect to VPN).
+#TunnelBlick# (soft to connect to VPN).
 
 Making first configuration.
 
@@ -774,7 +774,7 @@ ___________________________
 
 **When**
 
-AWS
+#AWS#
 
 Trying to switch role for IAM user via assume-role in the terminal.
 
@@ -797,7 +797,7 @@ ___________________________
 
 **When**
 
-AWS
+#AWS#
 
 Trying to switch role for IAM user via assume-role in the terminal.
 
@@ -820,7 +820,7 @@ ___________________________
 
 **When**
 
-Oracle DB
+#Oracle DB#
 
 Connecting to Oracle instance via `sqlplus` from your Windows Laptop.
 
@@ -848,7 +848,7 @@ ___________________________
 
 **When**
 
-AWS
+#AWS#
 
 Downloading of `connect.php` file from S3 to EC2 instance via `wget` util.
 
@@ -894,7 +894,7 @@ ___________________________
 
 **When**
 
-AWS
+#AWS#
 
 New AWS EC2 instance just launched (from home location) with previously successfully used (from work place) pre-configured identities (SG, VPC, ROLE, etc).
 
