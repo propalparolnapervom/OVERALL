@@ -152,9 +152,29 @@ ___________________________
 
 **When**
 
+#sed#
+
+Running `sed` command on MacOS, which works fine on Linux.
+
+
 **What**
 
+```
+sed -i "s|</head>|<script>something</script></head>|g" text.html 
+
+	sed: 1: "text.html": undefined label 'ext.html'
+```
+
 **So**
+
+The `sed` command is a bit different in Mac OS X, the `-i` option required a parameter to tell what extension to add for the backup file.
+
+To fix it, just add extension for backup file, for example ‘.bak’ :
+
+```
+sed -i '.bak' "s|</head>|<script>something</script></head>|g" text.html 
+```
+
 
 ___________________________
 
