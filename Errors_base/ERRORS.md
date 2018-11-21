@@ -134,9 +134,18 @@ ___________________________
 
 **When**
 
+#Helm#
+
+
 **What**
 
+```
+Error: UPGRADE FAILED: no Service with the name "auditing-web"
+```
+
 **So**
+
+Check [this](https://ninetypercent.atlassian.net/wiki/spaces/90POE/pages/197885962/Fix+Helm+deployment+issues)
 
 ___________________________
 
