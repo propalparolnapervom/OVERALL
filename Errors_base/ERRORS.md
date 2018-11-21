@@ -142,9 +142,21 @@ ___________________________
 
 **When**
 
+#Helm#
+
+Deployment of `oo` with helm chart.
+
 **What**
 
+```
+Error: UPGRADE FAILED: jobs.batch “auditing-init-db-0.0.10” already exists
+```
+
 **So**
+
+You would need to delete all jobs with `kubectl` and then redeploy.
+
+> This issue occures from time to time on older clusters (dev and staging)
 
 ___________________________
 
