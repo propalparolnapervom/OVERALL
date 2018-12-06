@@ -541,7 +541,7 @@ sudo yum install docker-ce
 
 **So**
 
-As mentioned [here](https://github.com/docker/for-linux/issues/299), following should be run prior to run `sudo yum install docker-ce -y`: 
+As mentioned [here](https://github.com/docker/for-linux/issues/299), following should be run prior to run `sudo yum install docker-ce -y` (prior to run the command, check package availability [here](http://mirror.centos.org/centos/7/extras/x86_64/Packages/)): 
 ```
 sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.42-1.gitad8f0f7.el7.noarch.rpm
 ```
