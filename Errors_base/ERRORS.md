@@ -513,9 +513,28 @@ Error: UPGRADE FAILED: no Service with the name "audit" found
 
 **So**
 
-Helm-chart `oo` has been deployed manually.
+> Concourse was stalled so it couldnt install helm to Dev.
 
-Next pipeline run was successful.
+> Which probably caused it to fail initially, but we knew this could happen once we get to over 100 helm releases
+
+
+Re-install `oo` helm-chart (it takes ~20 mins for Dev env).
+
+
+1. Checkout `helm` repository.
+
+2. Delete `oo` helm-chart
+```
+make delete
+``` 
+
+3. Install it manually.
+
+(it takes ~20 mins for Dev env)
+```
+make install
+```
+
 ___________________________
 
 
