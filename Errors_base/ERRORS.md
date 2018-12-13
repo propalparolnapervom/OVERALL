@@ -126,10 +126,58 @@ ___________________________
 
 **When**
 
+#Packer# + #Ansible#
+
+Running Packer build with Ansible as provisioning from Mac.
+
+
 **What**
+
+```
+    xbs-builder-name:
+    xbs-builder-name: PLAY [Make sure traceroute and httpd packages are installed] *******************
+    xbs-builder-name:
+    xbs-builder-name: TASK [Gathering Facts] *********************************************************
+==> xbs-builder-name: failed to handshake
+    xbs-builder-name: fatal: [default]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '[127.0.0.1]:56817' (RSA) to the list of known hosts.\r\nReceived disconnect from 127.0.0.1 port 56817:2: too many authentication failures\r\nDisconnected from 127.0.0.1 port 56817\r\n", "unreachable": true}
+    xbs-builder-name: 	to retry, use: --limit @/Users/sbur/overall/git_area/TOOLS/PACKER/Examples/Ex_2/provision_ansible/main_with_role.retry
+    xbs-builder-name:
+    xbs-builder-name: PLAY RECAP *********************************************************************
+    xbs-builder-name: default                    : ok=0    changed=0    unreachable=1    failed=0
+    xbs-builder-name:
+==> xbs-builder-name: Terminating the source AWS instance...
+==> xbs-builder-name: Cleaning up any extra volumes...
+==> xbs-builder-name: No volumes to clean up, skipping
+==> xbs-builder-name: Deleting temporary security group...
+==> xbs-builder-name: Deleting temporary keypair...
+Build 'xbs-builder-name' errored: Error executing Ansible: Non-zero exit status: exit status 4
+```
 
 **So**
 
+If mentioned [here](https://github.com/hashicorp/packer/issues/5746#issuecomment-356286112), on Mac this was fixed by removing of ssh-handshakes (by default their max nubmer is 6).
+
+```
+ssh-add -l
+
+	4096 SHA256:adsf  (RSA)
+	2048 SHA256:asdf  (RSA)
+	2048 SHA256:vdfv  (RSA)
+	2048 SHA256:dsrr  (RSA)
+	2048 SHA256:eref  (RSA)
+	2048 SHA256:baff  (RSA)
+	2048 SHA256:werv  (RSA)
+	
+	
+ssh-add -D
+
+	All identities removed.
+	
+	
+ssh-add -l
+
+	The agent has no identities.
+```
 ___________________________
 
 **When**
