@@ -565,8 +565,21 @@ Error: UPGRADE FAILED: no Service with the name "audit" found
 
 > Which probably caused it to fail initially, but we knew this could happen once we get to over 100 helm releases
 
+A) First approach (fast one)
 
-Re-install `oo` helm-chart (it takes ~20 mins for Dev env).
+1. Checkout `helm` repository.
+
+2. Rollback to last GOOD release
+```
+helm rollback openocean 0
+``` 
+
+3. Try to start applying deployments again.
+
+If this approach doesn’t work - use heavy wait delete/install pattern
+
+
+B) Re-install `oo` helm-chart (slow one: it takes ~20 mins for Dev env).
 
 
 1. Checkout `helm` repository.
