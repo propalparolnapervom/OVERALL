@@ -118,9 +118,33 @@ ___________________________
 
 **When**
 
+#Packer# + #goss#
+
+Running Packer build with goss as provisioning from Mac.
+
 **What**
 
+```
+	...
+	    xbs-builder-name: goss version v0.3.6
+	==> xbs-builder-name: Uploading goss tests...
+	    xbs-builder-name: Creating directory: /tmp/goss
+	    xbs-builder-name: Uploading tests/goss.yaml
+	==> xbs-builder-name: Running goss tests...
+	    xbs-builder-name: Error: found 0 tests, source: ./goss.yaml
+	==> xbs-builder-name: Terminating the source AWS instance...
+	==> xbs-builder-name: Cleaning up any extra volumes...
+	==> xbs-builder-name: No volumes to clean up, skipping
+	==> xbs-builder-name: Deleting temporary security group...
+	==> xbs-builder-name: Deleting temporary keypair...
+	...
+```
+
 **So**
+
+`goss.yaml` successfully pushed to temporary AWS instance, but some how its content is not valid: it treated as empty.
+
+Its replacing by other tests fixes the problem.
 
 ___________________________
 
