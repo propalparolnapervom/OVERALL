@@ -108,10 +108,46 @@ ___________________________
 
 **When**
 
+#Goss#
+
+Running `goss` utility to test existing files with following `goss.yaml` file:
+```
+file:
+  /usr/local/bin/concourse:
+    exists: true
+    owner: concourse
+    group: concourse
+    mode: 0755
+    filetype: file
+```
+
 **What**
+
+Run fails with error:
+```
+File: /usr/local/bin/concourse: mode:
+     Expected
+         <string>: 0555
+     to equal
+         <int>: 493
+```
+
+So instead of comparing file permissions (`<string>: 0555` with `<string>: 0755`), for example, it complains on some `<int>` value.
 
 **So**
 
+
+File `goss.yaml`should be updated:
+
+... follofing string ...
+```
+mode: 0755
+```
+
+... has to be updated with ...
+```
+mode: "0755"
+```
 ___________________________
 
 
