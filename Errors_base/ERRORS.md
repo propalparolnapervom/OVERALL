@@ -100,7 +100,7 @@ ___________________________
 
 #Kubernetes#
 
-User tries to get Kubernetes pods while he is working in the L office (so no VPN is in use).
+User tries to get Kubernetes pods.
 
 **What**
 
@@ -112,9 +112,17 @@ kubectl get pods
 
 **So**
 
+1) Option #1 (User in L, so no VPN)
+
 User: 
 
 > Turns out the issue is with my particular ethernet connection. I have to use wifi in order to connect to k8s. I tried connecting on another ethernet connection and it worked.
+
+2) Option #2 (User in K, son VPN)
+
+Dev VPN was used to connect to the Test env. Test VPN has to be used insted.
+
+
 
 ___________________________
 
