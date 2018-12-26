@@ -98,9 +98,23 @@ ___________________________
 ___________________________
 **When**
 
+#Kubernetes#
+
+User tries to get Kubernetes pods while he is working in the L office (so no VPN is in use).
+
 **What**
 
+```
+kubectl get pods
+
+	Unabe to connect to the server: dial tcp 54.194.163.123: i/o timeout
+```
+
 **So**
+
+User: 
+
+> Turns out the issue is with my particular ethernet connection. I have to use wifi in order to connect to k8s. I tried connecting on another ethernet connection and it worked.
 
 ___________________________
 
