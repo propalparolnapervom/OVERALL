@@ -91,10 +91,35 @@ ___________________________
 
 **When**
 
+#Terraform#
+
+Applying TF config file.
+
 **What**
+
+```
+terraform apply plan.txt
+
+	Error: Error applying plan:
+
+	1 error(s) occurred:
+
+	* provider.aws: error validating provider credentials: error calling sts:GetCallerIdentity: InvalidClientTokenId: The security token included in the request is invalid.
+		status code: 403, request id: a60c48a1-09c9-11e9-8cdf-c9b2440b78ec
+
+	Terraform does not automatically rollback in the face of errors.
+	Instead, your Terraform state file has been partially updated with
+	any resources that successfully completed. Please address the error
+	above and apply again to incrementally change your infrastructure.
+```
 
 **So**
 
+No AWS credentials were specified in TF config file.
+
+So `~/.aws/credentials` file was taken by default.
+
+Wrong credentials were specified in the file. 
 ___________________________
 **When**
 
