@@ -7,6 +7,68 @@
 ___________________________
 
 
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+**When**
+
+**What**
+
+**So**
+
+___________________________
+
+
+
+**When**
+
+
+**What**
+
+**So**
+
+___________________________
 
 **When**
 
@@ -81,9 +143,42 @@ ___________________________
 
 **When**
 
+#Terraform#
+
+Makin initialization of just created TF config file.
+
 **What**
 
+```
+terraform init
+
+	There are some problems with the configuration, described below.
+
+	The Terraform configuration must be valid before initialization so that
+	Terraform can determine which modules and providers need to be installed.
+
+	Error: Error parsing /Users/sbur/overall/git_area/CONFIG_MANAGEMENT/TERRAFORM/Examples/Ex_4_provision_local/provision_local.tf: object expected closing RBRACE got: EOF
+```
 **So**
+
+```
+resource "aws_instance"  "inst_by_tf" {    
+  ...
+  provisioner "local-exec" {
+    command = "echo This is public IP of created EC2: ${aws_instance.inst_by_tf.public_ip} > /tmp/ip_address.txt"
+}
+```
+
+`}` symbol was missed in previous block.
+
+```
+resource "aws_instance"  "inst_by_tf" {    
+  ...
+  provisioner "local-exec" {
+    command = "echo This is public IP of created EC2: ${aws_instance.inst_by_tf.public_ip} > /tmp/ip_address.txt"
+                            }
+}
+```
 
 ___________________________
 
