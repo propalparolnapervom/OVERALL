@@ -135,10 +135,56 @@ ___________________________
 
 **When**
 
+#OpenVPN#
+
+User on Linux was provided with generated `.ovpn` file. This file didn't help him to get a connection.
+
 **What**
+
+```
+openvpn vlad_dev.ovpn 
+
+	Wed Jan  2 18:27:40 2019 OpenVPN 2.4.6 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] built on Apr 24 2018
+	Wed Jan  2 18:27:40 2019 library versions: OpenSSL 1.0.2g  1 Mar 2016, LZO 2.08
+	Wed Jan  2 18:27:40 2019 Outgoing Control Channel Authentication: Using 256 bit message hash 'SHA256' for HMAC authentication
+	Wed Jan  2 18:27:40 2019 Incoming Control Channel Authentication: Using 256 bit message hash 'SHA256' for HMAC authentication
+	Wed Jan  2 18:27:40 2019 TCP/UDP: Preserving recently used remote address: [AF_INET]52.17.178.171:1194
+	Wed Jan  2 18:27:40 2019 Socket Buffers: R=[87380->87380] S=[16384->16384]
+	Wed Jan  2 18:27:40 2019 Attempting to establish TCP connection with [AF_INET]52.17.178.171:1194 [nonblock]
+	Wed Jan  2 18:27:41 2019 TCP connection established with [AF_INET]52.17.178.171:1194
+	Wed Jan  2 18:27:41 2019 TCP_CLIENT link local: (not bound)
+	Wed Jan  2 18:27:41 2019 TCP_CLIENT link remote: [AF_INET]52.17.178.171:1194
+	Wed Jan  2 18:27:41 2019 TLS: Initial packet from [AF_INET]52.17.178.171:1194, sid=62759820 d3242bd5
+	Wed Jan  2 18:27:41 2019 VERIFY OK: depth=1, CN=ca.drydock.studio
+	Wed Jan  2 18:27:41 2019 VERIFY KU OK
+	Wed Jan  2 18:27:41 2019 Validating certificate extended key usage
+	Wed Jan  2 18:27:41 2019 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
+	Wed Jan  2 18:27:41 2019 VERIFY EKU OK
+	Wed Jan  2 18:27:41 2019 VERIFY OK: depth=0, CN=server2.vpn.drydock.studio
+	Wed Jan  2 18:27:41 2019 Control Channel: TLSv1.2, cipher TLSv1/SSLv3 ECDHE-RSA-AES256-GCM-SHA384, 2048 bit RSA
+	Wed Jan  2 18:27:41 2019 [server2.vpn.drydock.studio] Peer Connection Initiated with [AF_INET]52.17.178.171:1194
+	Wed Jan  2 18:27:43 2019 SENT CONTROL [server2.vpn.drydock.studio]: 'PUSH_REQUEST' (status=1)
+	Wed Jan  2 18:27:43 2019 PUSH: Received control message: 'PUSH_REPLY,dhcp-option DNS 10.253.0.1,route 192.168.248.0 255.255.248.0,route 172.17.64.0 255.255.192.0,route 89.197.142.187 255.255.255.255,route 10.253.0.0 255.255.0.0,topology net30,ping 5,ping-restart 30,ifconfig 10.253.0.166 10.253.0.165,peer-id 0,cipher AES-256-GCM'
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: timers and/or timeouts modified
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: --ifconfig/up options modified
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: route options modified
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: --ip-win32 and/or --dhcp-option options modified
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: peer-id set
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: adjusting link_mtu to 1627
+	Wed Jan  2 18:27:43 2019 OPTIONS IMPORT: data channel crypto options modified
+	Wed Jan  2 18:27:43 2019 Data Channel: using negotiated cipher 'AES-256-GCM'
+	Wed Jan  2 18:27:43 2019 Outgoing Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+	Wed Jan  2 18:27:43 2019 Incoming Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+	Wed Jan  2 18:27:43 2019 ROUTE_GATEWAY 172.29.8.1/255.255.248.0 IFACE=wlp4s0 HWADDR=48:51:b7:94:a2:19
+	Wed Jan  2 18:27:43 2019 ERROR: Cannot ioctl TUNSETIFF tun: Operation not permitted (errno=1)
+	Wed Jan  2 18:27:43 2019 Exiting due to fatal error
+```
 
 **So**
 
+Latest `ovpn` version that user got via `apt-get` couldn't work with some parameters of generated `.ovpn` file.
+
+User downloaded another `ovpn` version, which allowed him to get a connection.
 ___________________________
 
 **When**
