@@ -460,6 +460,9 @@ Error: UPGRADE FAILED: jobs.batch “auditing-init-db-0.0.10” already exists
 **So**
 
 You would need to delete all jobs with `kubectl` and then redeploy.
+```
+kubectl delete jobs --all
+```
 
 > This issue occures from time to time on older clusters (dev and staging)
 
