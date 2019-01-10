@@ -127,10 +127,26 @@ ___________________________
 
 **When**
 
+#Concourse#
+
+Deployment of our pipelines is not working.
+
 **What**
+
+```
+./update-all-pipelines.sh ../pipelines.txt https://concourse.tools.devopenocean.studio/ 90poe_all
+
+	parse error: Invalid numeric literal at EOF at line 1, column 98
+```
 
 **So**
 
+`secrets.json` file is still ecncrypted.
+
+Decrypt it:
+```
+terrahelp decrypt -file secrets.json -simple-key=...
+```
 ___________________________
 
 **When**
