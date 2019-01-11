@@ -116,10 +116,28 @@ ___________________________
 
 **When**
 
+#Packer#
+
+Run Packer to build new AMI from old AMI
 
 **What**
 
+```
+...
+==> xbs-builder-name: Error waiting for SSH: ssh: handshake failed: ssh: unable to authenticate, attempted methods [publickey none], no supported methods remain
+==> xbs-builder-name: Terminating the source AWS instance...
+==> xbs-builder-name: Cleaning up any extra volumes...
+==> xbs-builder-name: No volumes to clean up, skipping
+==> xbs-builder-name: Deleting temporary security group...
+==> xbs-builder-name: Deleting temporary keypair...
+Build 'xbs-builder-name' errored: ssh: handshake failed: ssh: unable to authenticate, attempted methods [publickey none], no supported methods remain
+```
+
 **So**
+
+Source AMI was Ubuntu and connection in Packer was configured via `ec2-user`.
+
+It has to be changed to appropriate user for Ubuntu - `ubuntu`.
 
 ___________________________
 
