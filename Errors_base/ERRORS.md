@@ -98,9 +98,28 @@ ___________________________
 
 **When**
 
+#Ansible# + #AWS# + #Packer#
+
+Trying to run Ansible playbook on the EC2 instance (Ubuntu) via Packer.
+
 **What**
 
+```
+   xbs-builder-name: TASK [Gathering Facts] *********************************************************
+    xbs-builder-name: fatal: [default]: FAILED! => {"changed": false, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "/bin/sh: 1: /usr/bin/python: not found\r\n", "msg": "MODULE FAILURE", "rc": 127}
+    xbs-builder-name:   to retry, use: --limit @/Users/sbur/overall/git_area/TOOLS/PACKER/Examples/Ex_7_update_reboot_os_ubuntu/provision_ansible/main_with_role.retry
+```
+
 **So**
+
+It's all about Python. By default, Ansible uses Python 2.7 (yes, even the current version of Ansible 2.4 does) despite moves to migrate to Python3.
+
+As such, your target system needs to have Python 2.7 installed in order for Ansible to control it. Unfortunately, Ubuntu Server 16.04 doesn't come with Python 2.7 installed by default but there is a quick fix...
+
+So before creating source Ubuntu AMI for Paker, do it on the source EC2 Ubuntu instance:
+```
+sudo apt install python-minimal python-simplejson
+```
 
 ___________________________
 
