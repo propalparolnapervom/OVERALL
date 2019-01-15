@@ -90,9 +90,38 @@ ___________________________
 
 **When**
 
+#SSH# + #AWS#
+
+Trying to connect to the server with Private IP via Bastion server via SSH just after Bastion server was re-created.
+
+(prior to that this worked fine)
+
 **What**
 
+```
+ssh -o ProxyCommand='ssh -W %h:%p bastn-2018.eu-central-1.elb.amazonaws.com  -p 22' serg.brt@172.17.0.13
+
+	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+	Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+	It is also possible that a host key has just been changed.
+	The fingerprint for the ECDSA key sent by the remote host is
+	SHA256:p/+2T/5ZcjtKOdl5T+/rva8QhBXCb226NH0hMdoAKm4.
+	Please contact your system administrator.
+	Add correct host key in /Users/sbur/.ssh/known_hosts to get rid of this message.
+	Offending ECDSA key in /Users/sbur/.ssh/known_hosts:14
+	ECDSA host key for [bastn-20180718150102767200000001-1123279014.eu-west-1.elb.amazonaws.com]:22222 has changed and you have requested strict checking.
+	Host key verification failed.
+	ssh_exchange_identification: Connection closed by remote host
+```
+
 **So**
+
+Because of Bastion server recreation its host key has changed, but your `~/.ssh/known_hosts` file still contains its old value. 
+
+Just remove old value for Bastion server from `.ssh/known_hosts` file and try to connect once again.
 
 ___________________________
 
