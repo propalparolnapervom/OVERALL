@@ -72,9 +72,38 @@ ___________________________
 
 **When**
 
+#RHEL#
+
+On OS RHEL, try to be sure that I'm subscribed to the necessary repo.
+
 **What**
 
+```
+sudo subscription-manager repos --enable=rhel-7-server-optional-rpms
+
+	Error: 'rhel-7-server-optional-rpms' does not match a valid repository ID. Use "subscription-manager repos --list" to see valid repositories.
+```
+
 **So**
+
+You have to be registered (subscribed) to the RHEL system.
+
+Read about [subscriptions/registering](https://access.redhat.com/solutions/253273).
+
+If you sure you are, try to re-configure:
+```
+sudo subscription-manager remove --all
+sudo subscription-manager unregister
+sudo subscription-manager clean
+
+sudo subscription-manager register
+sudo subscription-manager refresh
+sudo subscription-manager attach --auto
+
+sudo subscription-manager repos --enable rhel-7-server-extras-rpms
+sudo subscription-manager repos --enable rhel-7-server-optional-rpms
+sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms
+```
 
 ___________________________
 
@@ -82,9 +111,30 @@ ___________________________
 
 **When**
 
+#SSH# + #AWS#
+
+Trying to connect to the RHEL server with Public IP via SSH just after it was created.
+
+
 **What**
 
+```
+ssh 52.59.237.72 -i mine_mac_frankfurt.pem 
+
+	s.brt@52.59.237.72: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+
+OR
+
+ssh centos@52.59.237.72 -i mine_mac_frankfurt.pem
+
+	centos@52.59.237.72: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+```
+
 **So**
+
+In AWS by default RHEL server is created with user `ec2-user`.
+
+So it has to be used (instead of `centos` or any other). 
 
 ___________________________
 
