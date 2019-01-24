@@ -63,10 +63,19 @@ ___________________________
 
 **When**
 
+#OS#
+
+On OS Amazon Linux, trying to install necessary package via `yum`
 
 **What**
 
+```
+Failure talking to yum: [Errno 2] No such file or directory: '/var/cache/yum/x86_64/2/epel/gen/primary_db.sqlite'
+```
+
 **So**
+
+Re-run should help.
 
 ___________________________
 
