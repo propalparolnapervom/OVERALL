@@ -53,9 +53,26 @@ ___________________________
 
 **When**
 
+#AWS# + #Kubernetes#
+
+Trying to get infor from the new EKS cluster.
+
+Credentials in `~/.aws/credentials` are up-to-date.
+
 **What**
 
+```
+kubectl get pods
+
+	could not get token: NoCredentialProviders: no valid providers in chain. Deprecated.
+		For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+```
+
 **So**
+
+Credentials from `~/.aws/credentials` are not enought. Appropriate AWS role has to be assigned in addition.
+
+So make `assume-role development`, for example in my case.
 
 ___________________________
 
